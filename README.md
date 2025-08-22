@@ -1,19 +1,52 @@
-# Flappy Fish
+# 🌌 Space Dodge
 
-Jogo em Python (Pygame) estilo Flappy Bird, com um peixe evitando algas e obstáculos do oceano.
+Um jogo 2D feito em **Python + Pygame** onde você controla uma nave que deve **desviar de planetas e asteroides** enquanto acumula pontos. Quanto mais tempo sobreviver, maior sua pontuação e nível de dificuldade! 🚀
 
-## Como rodar
+Jogo desenvolvido durante o curso CST Análise e Desenvolvimento de Sistemas na faculdade UNINTER.
 
-Recomendado criar um virtualenv e instalar dependências:
+---
 
-fish shell:
+## 🎮 Gameplay
 
-    python3 -m venv .venv
-    source .venv/bin/activate.fish
-    pip install -r requirements.txt
+- Controle sua nave com as **setas ← →** ou **A / D**.
+- Desvie dos **planetas/asteroides** que caem da parte superior da tela.
+- Ganhe pontos ao sobreviver mais tempo.
+- A cada **100 pontos**, sobe de nível e a dificuldade aumenta (mais planetas, mais rápidos).
+- Pressione **Espaço** para **pausar** ou **reiniciar** após o Game Over.
+- Pressione **ESC** para sair.
 
-Rodar o jogo:
+---
 
-    python main.py
+## ⚙️ Instalação
 
-O projeto gera assets simples automaticamente (se não existirem) usando Pillow.
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seuusuario/space_dodge.git
+   cd space_dodge
+   ```
+2. Crie um ambiente virtual (opcional, mas recomendado):
+
+   ```
+   python -m venv venv
+   source venv/bin/activate   # Linux/Mac
+   venv\Scripts\activate      # Windows
+   ```
+
+3. Instale as dependências:
+
+   ```
+   pip install -r requirements.txt
+   ```
+
+4. Rode o jogo:
+
+   ```
+   python space_dodge.py
+   ```
+
+---
+
+## 🛠️ Tecnologias
+
+- Python 3.x
+- Pygame

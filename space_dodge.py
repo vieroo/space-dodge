@@ -1,15 +1,3 @@
-"""
-Jogo "Dodge the Planets" simples usando pygame.
-Arquivo: dodge_blocks.py
-Como rodar (macOS, fish shell):
-    python3 dodge_blocks.py
-
-Controles:
-    - Setas esquerda/direita ou A/D para mover
-    - Espaço para pausar/reiniciar após Game Over
-
-Ignora a pasta de assets.
-"""
 import random
 import sys
 import pygame
