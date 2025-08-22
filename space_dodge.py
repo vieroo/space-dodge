@@ -138,6 +138,22 @@ def load_planet_images():
 
 def main():
     pygame.init()
+    pygame.mixer.init()
+
+    # Carregar música de fundo
+    assets_dir = os.path.join(os.path.dirname(__file__), 'assets/sounds')
+    bg_music_path = os.path.join(assets_dir, 'background.mp3')
+    if os.path.isfile(bg_music_path):
+        pygame.mixer.music.load(bg_music_path)
+        pygame.mixer.music.set_volume(0.5)  # volume de 0.0 a 1.0
+        pygame.mixer.music.play(-1)  # -1 = toca em loop infinito
+
+    gameover_sound = None
+    gameover_path = os.path.join(assets_dir, 'game-over.mp3')
+    if os.path.isfile(gameover_path):
+        gameover_sound = pygame.mixer.Sound(gameover_path)
+        gameover_sound.set_volume(0.7)
+
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
     pygame.display.set_caption("Dodge the Blocks")
     clock = pygame.time.Clock()
@@ -262,6 +278,12 @@ def main():
                 if int(score) > high_score:
                     high_score = int(score)
                 pygame.time.set_timer(SPAWN_EVENT, 0)
+
+                # tocar som de game over
+                if gameover_sound:
+                    gameover_sound.play()
+                # parar a música de fundo (opcional)
+                pygame.mixer.music.stop()
 
             # incrementa pontuação conforme tempo (usar float para evitar truncamento)
             # usamos dt/100 para ter aproximadamente ~10 pontos por segundo
